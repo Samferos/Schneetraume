@@ -12,7 +12,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="LeftPanel"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Position #"
+text = "Position 1"
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="LeftPanel"]
