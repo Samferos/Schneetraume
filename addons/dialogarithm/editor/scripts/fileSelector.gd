@@ -12,7 +12,7 @@ func SearchFile():
 	window.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	window.add_filter("*.png", "Transparent Images")
 	window.connect("file_selected", Callable(self, "UpdateSprite"))
-	EditorPlugin.new().get_editor_interface().get_base_control().add_child(window)
+	get_node("/root").get_child(0).add_child(window)
 
 func UpdateSprite(sprite):
 	get_child(2).texture = sprite
