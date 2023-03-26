@@ -5,7 +5,7 @@ var positionId = 1
 
 func _enter_tree():
 	$LeftPanel/Label.text = "Position " + str(positionId)
-	connect("gui_input", Callable(self, "Searchfile"), CONNECT_DEFERRED)
+	$LeftPanel/Button.connect("pressed", Callable(self, "SearchFile"))
 
 func SearchFile():
 	var spriteFunc = Callable(self, "UpdateSprite")
@@ -13,8 +13,7 @@ func SearchFile():
 	window.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	window.add_filter("*.png", "Transparent Images")
 	window.connect("file_selected", spriteFunc)
-	pass
+	get_node(".").add_child(window)
 
 func UpdateSprite(sprite):
 	get_child(2).texture = sprite
-	pass

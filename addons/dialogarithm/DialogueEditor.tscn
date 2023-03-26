@@ -44,73 +44,73 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+[node name="InstructionsPanel" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/InstructionsPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InstructionsPanel/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Instructions Panel"
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DisplayText" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="DisplayText" type="Button" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Display Text"
 
-[node name="ChangeSprite" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="ChangeSprite" type="Button" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Change Sprite"
 
-[node name="CloseDialog" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="CloseDialog" type="Button" parent="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Close Dialog"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="DialogEditor" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/DialogEditor"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/DialogEditor/PanelContainer"]
 layout_mode = 2
 
-[node name="Button" type="MenuButton" parent="HBoxContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Button" type="MenuButton" parent="HBoxContainer/DialogEditor/PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "File"
 switch_on_hover = true
@@ -126,12 +126,12 @@ popup/item_2/separator = true
 popup/item_3/text = "Clear"
 popup/item_3/id = 3
 
-[node name="Button2" type="MenuButton" parent="HBoxContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Button2" type="MenuButton" parent="HBoxContainer/DialogEditor/PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "Edit"
 switch_on_hover = true
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/DialogEditor"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -140,26 +140,27 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/DialogEditor/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/DialogEditor/MarginContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/DialogEditor/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 follow_focus = true
 
-[node name="DialogueBlocksList" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
+[node name="DialogueBlocksList" type="VBoxContainer" parent="HBoxContainer/DialogEditor/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DisplayTextBlock" parent="HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/DialogueBlocksList" instance=ExtResource("1_a63yc")]
+[node name="DisplayTextBlock" parent="HBoxContainer/DialogEditor/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/DialogueBlocksList" instance=ExtResource("1_a63yc")]
 layout_mode = 2
 
-[node name="ChangeSpriteBlock" parent="HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/DialogueBlocksList" instance=ExtResource("2_ejfu8")]
+[node name="ChangeSpriteBlock" parent="HBoxContainer/DialogEditor/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/DialogueBlocksList" instance=ExtResource("2_ejfu8")]
 layout_mode = 2
