@@ -1,32 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw3sx1vutxa5r"]
+[gd_scene load_steps=2 format=3 uid="uid://dw3sx1vutxa5r"]
 
 [ext_resource type="Script" path="res://addons/dialogarithm/editor/scripts/fileSelector.gd" id="1_lj05q"]
-[ext_resource type="Texture2D" uid="uid://0o7lpt22opm2" path="res://icon.svg" id="2_ad1ll"]
 
-[node name="SpriteSelector" type="HBoxContainer"]
+[node name="SpriteSelector" type="MarginContainer"]
+offset_right = 130.0
+offset_bottom = 61.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 script = ExtResource("1_lj05q")
 
-[node name="LeftPanel" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="LeftPanel"]
+[node name="LeftPanel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/LeftPanel"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Position 1"
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="LeftPanel"]
+[node name="Button" type="Button" parent="HBoxContainer/LeftPanel"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Change Texture"
 
-[node name="VSeparator" type="VSeparator" parent="."]
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Texture" type="TextureRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_ad1ll")
 stretch_mode = 4
