@@ -1,9 +1,9 @@
 @tool
-extends Control
+extends DataManager
 
 const textureSlot = "res://addons/dialogarithm/editor/sprite_selector.tscn"
-@export var positionTypes : int
-var slots = {"position1" = false, "position2" = false, "position3" = false, "position4" = false, "position5" = false}
+@export var positionTypes := 5
+var slots : Array
 
 func _enter_tree():
 	print($VBoxContainer/Positions.get_child(0).is_connected("toggled", Callable(self, "TogglePosition")))
@@ -11,13 +11,19 @@ func _enter_tree():
 func Initialization():
 	#Slots Values Dictionnary Init
 	for i in positionTypes:
-		slots["position" + str(i + 1)] = false
+		slots.append({("position" + str(i + 1)) : false}) 
 		var switch = CheckButton.new()
 		switch.text = "Position " + str(i + 1)
-		switch.button_pressed = slots["position" + str(i+1)]
+		switch.button_pressed = slots[i]["position" + str(i + 1)]
 		switch.connect("toggled", Callable(self, "TogglePosition").bind(i + 1))
 		$VBoxContainer/Positions.add_child(switch)
 	SetSlots()
+
+func GetData() -> Dictionary:
+	var data : Array
+	for i in positionTypes:
+		if slots["position" + str(i + 1)]:
+			data.append(["position" + str(i + 1), ])
 
 func SetSlots():
 	var presentSlots : PackedInt32Array
