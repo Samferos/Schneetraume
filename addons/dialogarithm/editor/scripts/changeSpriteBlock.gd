@@ -37,7 +37,12 @@ func SetSlots():
 	for i in range(Npositions):
 		var slotname = "position" + str(i + 1)
 		if slots[i][slotname] and not presentSlots.has(i + 1):
-			%Slots.add_child(SpriteSelector.new(i + 1))
+			var newSlot = SpriteSelector.new()
+			newSlot.positionId = i + 1
+			newSlot.texture = slots[i]["texture"]
+			newSlot.connect("texture_changed", Callable(self, TextureChange()))
+			newSlot.Initialization()
+			%Slots.add_child(newSlot)
 	#Adding empty notifier label if no position slot is desired.
 	var emptiness
 	for i in slots:
@@ -53,3 +58,6 @@ func TogglePosition(state, id):
 	var slotname = "position" + str(id)
 	slots[id - 1]["position" + str(id)] = state
 	SetSlots()
+
+func TextureChange():
+	slots[]

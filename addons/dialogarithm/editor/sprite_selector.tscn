@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dw3sx1vutxa5r"]
+[gd_scene load_steps=2 format=3 uid="uid://dw3sx1vutxa5r"]
+
+[ext_resource type="Script" path="res://addons/dialogarithm/editor/scripts/fileSelector.gd" id="1_lj05q"]
 
 [node name="SpriteSelector" type="MarginContainer"]
 offset_right = 130.0
@@ -7,6 +9,7 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+script = ExtResource("1_lj05q")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
