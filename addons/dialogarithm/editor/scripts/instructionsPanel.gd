@@ -8,5 +8,5 @@ func addBlock(id):
 			wantedBlock = preload("res://addons/dialogarithm/editor/display_text_block.tscn").instantiate()
 		1:
 			wantedBlock = preload("res://addons/dialogarithm/editor/change_sprite_block.tscn").instantiate()
-			wantedBlock.Initialize()
+	wantedBlock.Initialize()
 	%DialogueBlocksList.add_child(wantedBlock)

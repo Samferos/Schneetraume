@@ -1,32 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhlyld3d3iqa3"]
+[gd_scene load_steps=3 format=3 uid="uid://dhlyld3d3iqa3"]
 
-[ext_resource type="PackedScene" uid="uid://duel53lux822x" path="res://addons/dialogarithm/editor/base_block.tscn" id="1_881n1"]
+[ext_resource type="PackedScene" uid="uid://cyaok05rkwtlw" path="res://addons/dialogarithm/editor/base_block.tscn" id="1_881n1"]
+[ext_resource type="Script" path="res://addons/dialogarithm/editor/scripts/instructionBlock.gd" id="2_d16lw"]
 
 [node name="DisplayTextBlock" instance=ExtResource("1_881n1")]
+script = ExtResource("2_d16lw")
 instructionTitle = "Display Text"
 
-[node name="Title" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="0"]
-text = "Display Text"
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" index="1"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Contents" index="1"]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer" index="0"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/Contents/MarginContainer" index="0"]
 layout_mode = 2
 
-[node name="Speaker" type="TextEdit" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer" index="0"]
+[node name="Speaker" type="TextEdit" parent="PanelContainer/MarginContainer/Contents/MarginContainer/PanelContainer" index="0"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 placeholder_text = "Here lies your speaker's name. Don't make a typo!"
 scroll_smooth = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" index="2"]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/Contents" index="2"]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer2" index="0"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/Contents/MarginContainer2" index="0"]
 layout_mode = 2
 
-[node name="DialogText" type="TextEdit" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PanelContainer" index="0"]
+[node name="DialogText" type="TextEdit" parent="PanelContainer/MarginContainer/Contents/MarginContainer2/PanelContainer" index="0"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 placeholder_text = "Here lies your text. Write away to your heart's content!"
