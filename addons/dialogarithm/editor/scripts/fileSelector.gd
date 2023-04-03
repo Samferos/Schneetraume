@@ -6,6 +6,10 @@ signal texture_changed(texture, id)
 var positionId : int
 var texture
 
+func _enter_tree():
+	$MarginContainer/HBoxContainer/LeftPanel/Label.text = "Position " + str(positionId)
+	UpdateSprite(texture)
+
 func SearchFile():
 	var window = FileDialog.new()
 	window.file_mode = FileDialog.FILE_MODE_OPEN_FILE
