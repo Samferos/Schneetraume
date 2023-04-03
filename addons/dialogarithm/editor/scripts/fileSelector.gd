@@ -1,19 +1,10 @@
 @tool
 extends Control
 class_name SpriteSelector
-const _selector = preload("res://addons/dialogarithm/editor/sprite_selector.tscn")
 signal texture_changed(texture, id)
 
 var positionId : int
 var texture
-
-#func _init(id):
-#	positionId = id
-#	add_child(_selector.instantiate())
-
-func Initialization():
-	$HBoxContainer/LeftPanel/Label.text = "Position " + str(positionId)
-	$HBoxContainer/LeftPanel/Button.connect("pressed", Callable(self, "SearchFile"))
 
 func SearchFile():
 	var window = FileDialog.new()
@@ -25,7 +16,13 @@ func SearchFile():
 	window.size = Vector2(600, 400)
 	window.visible = true
 
+func ClearTexture():
+	UpdateSprite(null)
+
 func UpdateSprite(sprite):
 	emit_signal("texture_changed", sprite, positionId)
 	texture = sprite
-	$HBoxContainer/Texture.texture = load(sprite)
+	if not sprite == null:
+		$MarginContainer/HBoxContainer/Texture.texture = load(sprite)
+	else:
+		$MarginContainer/HBoxContainer/Texture.texture = null
