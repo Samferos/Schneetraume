@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://11qgld3ydapw"]
+[gd_scene load_steps=5 format=3 uid="uid://11qgld3ydapw"]
 
 [ext_resource type="Script" path="res://addons/dialogarithm/editor/scripts/instructionsPanel.gd" id="1_7k8nx"]
+[ext_resource type="Script" path="res://addons/dialogarithm/editor/scripts/headerCommands.gd" id="2_sinhu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4etgl"]
 content_margin_left = 0.0
@@ -100,6 +101,7 @@ text = "Close Dialog"
 [node name="DialogEditor" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("2_sinhu")
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/DialogEditor"]
 layout_mode = 2
@@ -107,7 +109,7 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/DialogEditor/PanelContainer"]
 layout_mode = 2
 
-[node name="Button" type="MenuButton" parent="HBoxContainer/DialogEditor/PanelContainer/HBoxContainer"]
+[node name="File" type="MenuButton" parent="HBoxContainer/DialogEditor/PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "File"
 switch_on_hover = true
@@ -123,7 +125,7 @@ popup/item_2/separator = true
 popup/item_3/text = "Clear"
 popup/item_3/id = 3
 
-[node name="Button2" type="MenuButton" parent="HBoxContainer/DialogEditor/PanelContainer/HBoxContainer"]
+[node name="Edit" type="MenuButton" parent="HBoxContainer/DialogEditor/PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "Edit"
 switch_on_hover = true
@@ -158,3 +160,4 @@ size_flags_horizontal = 3
 
 [connection signal="pressed" from="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/DisplayText" to="HBoxContainer/InstructionsPanel" method="addBlock" binds= [0]]
 [connection signal="pressed" from="HBoxContainer/InstructionsPanel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ChangeSprite" to="HBoxContainer/InstructionsPanel" method="addBlock" binds= [1]]
+[connection signal="about_to_popup" from="HBoxContainer/DialogEditor/PanelContainer/HBoxContainer/File" to="HBoxContainer/DialogEditor" method="FileSubMenu"]

@@ -13,7 +13,7 @@ func moveUp():
 func moveDown():
 	get_parent().move_child(self, get_index() + 1)
 
-func duplicateBlock(data = null):
+func duplicateBlock():
 	get_parent().add_child(duplicate())
 
 func delete():
