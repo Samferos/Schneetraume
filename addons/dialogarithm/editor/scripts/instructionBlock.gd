@@ -2,6 +2,7 @@
 extends Control
 class_name InstructionBlock
 @export var instructionTitle = "Block Instruction"
+@export var instructionId = 0
 var data : Array
 
 func _ready():
@@ -19,5 +20,5 @@ func duplicateBlock():
 func delete():
 	queue_free()
 
-func Initialize(data = null):
+func Initialize(newData = null):
 	pass

@@ -3,6 +3,8 @@ extends Control
 
 var title = "Dialog Title"
 var description = "A Example Dialog"
+const Block0 = preload("res://addons/dialogarithm/editor/display_text_block.tscn")
+const Block1 = preload("res://addons/dialogarithm/editor/change_sprite_block.tscn")
 
 func _enter_tree():
 	$PanelContainer/HBoxContainer/File.get_popup().connect("id_pressed", Callable(self, "FileSubMenu"))
@@ -11,11 +13,30 @@ func FileSubMenu(id):
 	match id:
 		0: #Save
 			print("Saving")
-			var savedData = [{"information": {"title": title,"description": description},"contents": {}}]
+			var savedData = [{"information": {"title": title,"description": description},"contents":[]}]
 			for i in %DialogueBlocksList.get_child_count():
-				savedData[0]["contents"][i]
+				var selectedBlock = %DialogueBlocksList.get_child(i)
+				savedData[0]["contents"].append({"id" : selectedBlock.instructionId, "data" : selectedBlock.data})
+			var file = FileAccess.open("res://addons/dialogarithm/editor/dialogues/" + title + ".json", FileAccess.WRITE)
+			file.store_string(JSON.stringify(savedData, "/t", false, true))
+			file.close()
 		1: #Load
 			print("Loading")
+			var window = FileDialog.new()
+			window.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+			window.add_filter("*.json", "a usable dialog file not any json file you smartass")
+			window.connect("file_selected", Callable(self, "Load"))
+			get_node("/root").get_child(0).add_child(window)
+			window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN
+			window.size = Vector2(600, 400)
+			window.visible = true
 		3: #Clear
 			print("Clearing")
 
+func Load(newData):
+	newData = JSON.parse_string(newData)
+	for i in newData[0]["contents"]:
+		var newBlock
+		newBlock = get("Block" + str(i["id"]))
+		newBlock.data = i["data"]
+		%DialogueBlocksList.add_child(newBlock)

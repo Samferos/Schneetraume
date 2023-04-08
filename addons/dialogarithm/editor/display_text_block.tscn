@@ -5,9 +5,7 @@
 
 [node name="DisplayTextBlock" instance=ExtResource("1_881n1")]
 script = ExtResource("2_m7bh1")
-
-[node name="Title" parent="PanelContainer/MarginContainer/Contents/Header" index="0"]
-text = "Display Text"
+instructionTitle = "Display Text"
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Contents" index="1"]
 layout_mode = 2
@@ -33,5 +31,5 @@ layout_mode = 2
 placeholder_text = "Here lies your text. Write away to your heart's content!"
 scroll_smooth = true
 
-[connection signal="text_set" from="PanelContainer/MarginContainer/Contents/MarginContainer/PanelContainer/Speaker" to="." method="dataUpdate"]
-[connection signal="text_set" from="PanelContainer/MarginContainer/Contents/MarginContainer2/PanelContainer/DialogText" to="." method="dataUpdate"]
+[connection signal="text_changed" from="PanelContainer/MarginContainer/Contents/MarginContainer/PanelContainer/Speaker" to="." method="dataUpdate"]
+[connection signal="text_changed" from="PanelContainer/MarginContainer/Contents/MarginContainer2/PanelContainer/DialogText" to="." method="dataUpdate"]

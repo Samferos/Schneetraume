@@ -6,6 +6,7 @@
 [node name="ChangeSpriteBlock" instance=ExtResource("1_cww6n")]
 script = ExtResource("2_nfwfg")
 instructionTitle = "Change Sprite"
+instructionId = 1
 
 [node name="Title" parent="PanelContainer/MarginContainer/Contents/Header" index="0"]
 text = "Change Sprite"
