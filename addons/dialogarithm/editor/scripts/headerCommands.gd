@@ -18,7 +18,7 @@ func FileSubMenu(id):
 				var selectedBlock = %DialogueBlocksList.get_child(i)
 				savedData[0]["contents"].append({"id" : selectedBlock.instructionId, "data" : selectedBlock.data})
 			var file = FileAccess.open("res://addons/dialogarithm/editor/dialogues/" + title + ".json", FileAccess.WRITE)
-			file.store_string(JSON.stringify(savedData, "/t", false, true))
+			file.store_string(JSON.stringify(savedData, " ", false, true))
 			file.close()
 		1: #Load
 			print("Loading")
@@ -32,11 +32,18 @@ func FileSubMenu(id):
 			window.visible = true
 		3: #Clear
 			print("Clearing")
+			Clear()
 
 func Load(newData):
-	newData = JSON.parse_string(newData)
+	var file = FileAccess.open(newData, FileAccess.READ)
+	newData = JSON.parse_string(file.get_as_text())
 	for i in newData[0]["contents"]:
 		var newBlock
-		newBlock = get("Block" + str(i["id"]))
+		newBlock = get("Block" + str(i["id"])).instantiate()
 		newBlock.data = i["data"]
 		%DialogueBlocksList.add_child(newBlock)
+	file.close()
+
+func Clear():
+	for i in %DialogueBlocksList.get_children():
+		i.queue_free()

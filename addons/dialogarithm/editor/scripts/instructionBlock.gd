@@ -15,7 +15,9 @@ func moveDown():
 	get_parent().move_child(self, get_index() + 1)
 
 func duplicateBlock():
-	get_parent().add_child(duplicate())
+	var newBlock = duplicate()
+	newBlock.data = data
+	get_parent().add_child(newBlock)
 
 func delete():
 	queue_free()

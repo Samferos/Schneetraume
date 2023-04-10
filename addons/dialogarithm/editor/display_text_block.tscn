@@ -7,6 +7,9 @@
 script = ExtResource("2_m7bh1")
 instructionTitle = "Display Text"
 
+[node name="Title" parent="PanelContainer/MarginContainer/Contents/Header" index="0"]
+text = "Display Text"
+
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Contents" index="1"]
 layout_mode = 2
 

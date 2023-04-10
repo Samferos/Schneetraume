@@ -1,46 +1,46 @@
 [
-	{
-		"information": {
-			"title": "Dialog Title",
-			"description": "A Example Dialog"
-		},
-		"contents": [
-			{
-				"id": 1,
-				"data": [
-					{
-						"position": 1,
-						"texture": null
-					},
-					{
-						"position": 2,
-						"texture": null
-					},
-					{
-						"position": 3,
-						"texture": "res://icon.svg"
-					},
-					{
-						"position": 4,
-						"texture": null
-					},
-					{
-						"position": 5,
-						"texture": null
-					}
-				]
-			},
-			{
-				"id": 0,
-				"data": [
-					{
-						"speaker": "Shrek"
-					},
-					{
-						"text": "WHAT ARE YOU DOING IN MY SWAMP?!"
-					}
-				]
-			}
-		]
-	}
+ {
+  "information": {
+   "title": "Dialog Title",
+   "description": "A Example Dialog"
+  },
+  "contents": [
+   {
+	"id": 1,
+	"data": [
+	 {
+	  "position": 1,
+	  "texture": null
+	 },
+	 {
+	  "position": 2,
+	  "texture": null
+	 },
+	 {
+	  "position": 3,
+	  "texture": "res://assets/graphics/2D/portraits/johanna/JohannaNeutral.png"
+	 },
+	 {
+	  "position": 4,
+	  "texture": null
+	 },
+	 {
+	  "position": 5,
+	  "texture": null
+	 }
+	]
+   },
+   {
+	"id": 0,
+	"data": [
+	 {
+	  "speaker": "Johanna"
+	 },
+	 {
+	  "text": "lol c nul ce systeme de dialogesss"
+	 }
+	]
+   }
+  ]
+ }
 ]
