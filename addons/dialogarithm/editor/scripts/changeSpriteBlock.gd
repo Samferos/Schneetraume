@@ -12,7 +12,8 @@ func _enter_tree():
 	for i in %Slots.get_children():
 		i.queue_free()
 	for i in range(Npositions):
-		data.append({"position" : i + 1, "texture" : null})
+		if not data[i].has("position"):
+			data[i] = {"position" : i + 1, "texture" : null}
 		var newSlot = preload("res://addons/dialogarithm/editor/sprite_selector.tscn").instantiate()
 		newSlot.positionId = data[i]["position"]
 		newSlot.texture = data[i]["texture"]

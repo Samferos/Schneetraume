@@ -13,13 +13,14 @@ func FileSubMenu(id):
 	match id:
 		0: #Save
 			print("Saving")
-			var savedData = [{"information": {"title": title,"description": description},"contents":[]}]
-			for i in %DialogueBlocksList.get_child_count():
-				var selectedBlock = %DialogueBlocksList.get_child(i)
-				savedData[0]["contents"].append({"id" : selectedBlock.instructionId, "data" : selectedBlock.data})
-			var file = FileAccess.open("res://addons/dialogarithm/editor/dialogues/" + title + ".json", FileAccess.WRITE)
-			file.store_string(JSON.stringify(savedData, " ", false, true))
-			file.close()
+			var window = FileDialog.new()
+			window.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+			window.add_filter("*.json", "this one will be valid")
+			window.connect("file_selected", Callable(self, "Save"))
+			get_node("/root").get_child(0).add_child(window)
+			window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN
+			window.size = Vector2(600, 400)
+			window.visible = true
 		1: #Load
 			print("Loading")
 			var window = FileDialog.new()
@@ -42,6 +43,15 @@ func Load(newData):
 		newBlock = get("Block" + str(i["id"])).instantiate()
 		newBlock.data = i["data"]
 		%DialogueBlocksList.add_child(newBlock)
+	file.close()
+
+func Save(newData):
+	var savedData = [{"information": {"title": title,"description": description},"contents":[]}]
+	for i in %DialogueBlocksList.get_child_count():
+		var selectedBlock = %DialogueBlocksList.get_child(i)
+		savedData[0]["contents"].append({"id" : selectedBlock.instructionId, "data" : selectedBlock.data})
+	var file = FileAccess.open(newData, FileAccess.WRITE)
+	file.store_string(JSON.stringify(savedData, " ", false, true))
 	file.close()
 
 func Clear():
