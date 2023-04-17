@@ -13,14 +13,16 @@ func _enter_tree():
 		i.queue_free()
 	for i in range(Npositions):
 		if data.size() == i:
-			data.append({"position" : i + 1, "texture" : null})
+			data.append({"position" : i + 1, "texture" : null, "highlighted" : false})
 		elif not data[i].has("position"):
-			data[i] = {"position" : i + 1, "texture" : null}
+			data[i] = {"position" : i + 1, "texture" : null, "highlighted" : false}
 		var newSlot = preload("res://addons/dialogarithm/editor/sprite_selector.tscn").instantiate()
 		newSlot.positionId = data[i]["position"]
 		newSlot.texture = data[i]["texture"]
-		newSlot.connect("texture_changed", Callable(self, "TextureChange"))
+		newSlot.highlighted = data[i]["highlighted"]
+		newSlot.connect("data_changed", Callable(self, "DataChange"))
 		%Slots.add_child(newSlot)
 
-func TextureChange(texture = null, id = 1):
+func DataChange(texture = null, highlight = false, id = 1):
 	data[id - 1]["texture"] = texture
+	data[id - 1]["highlighted"] = highlight

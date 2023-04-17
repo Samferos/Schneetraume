@@ -23,7 +23,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LeftPanel"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Position 1"
+text = "Position 0"
 vertical_alignment = 1
 
 [node name="Set" type="Button" parent="MarginContainer/HBoxContainer/LeftPanel"]
@@ -34,6 +34,11 @@ text = "Change Texture"
 [node name="Clear" type="Button" parent="MarginContainer/HBoxContainer/LeftPanel"]
 layout_mode = 2
 text = "Clear Texture"
+
+[node name="Highlight" type="CheckBox" parent="MarginContainer/HBoxContainer/LeftPanel"]
+layout_mode = 2
+disabled = true
+text = "Highlighted"
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -48,3 +53,4 @@ stretch_mode = 4
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/LeftPanel/Set" to="." method="SearchFile"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/LeftPanel/Clear" to="." method="ClearTexture"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/LeftPanel/Highlight" to="." method="Update"]

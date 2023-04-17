@@ -1,0 +1,51 @@
+[
+ {
+  "information": {
+   "title": "Dialog Title",
+   "description": "A Example Dialog"
+  },
+  "contents": [
+   {
+    "id": 1,
+    "data": [
+     {
+      "position": 1,
+      "texture": null,
+      "highlighted": false
+     },
+     {
+      "position": 2,
+      "texture": null,
+      "highlighted": false
+     },
+     {
+      "position": 3,
+      "texture": "res://assets/graphics/2D/portraits/johanna/JohannaNeutral.png",
+      "highlighted": true
+     },
+     {
+      "position": 4,
+      "texture": null,
+      "highlighted": false
+     },
+     {
+      "position": 5,
+      "texture": null,
+      "highlighted": false
+     }
+    ]
+   },
+   {
+    "id": 0,
+    "data": [
+     {
+      "speaker": "Johanna"
+     },
+     {
+      "text": "lol c nul ce systeme de dialogesss"
+     }
+    ]
+   }
+  ]
+ }
+]

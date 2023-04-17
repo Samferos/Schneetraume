@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://jwql8x34wovv"]
+
+[ext_resource type="Texture2D" uid="uid://dka0cpngjg46e" path="res://assets/graphics/2D/ui/hatchPattern.png" id="2_ac7h4"]
+
+[node name="Position1" type="Control"]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Highlight" type="TextureRect" parent="Sprite"]
+visible = false
+show_behind_parent = true
+clip_children = 1
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -197.5
+offset_top = 5.0
+offset_right = 207.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Pattern" type="TextureRect" parent="Sprite/Highlight"]
+modulate = Color(0.580392, 0.72549, 0.807843, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ac7h4")
+stretch_mode = 1
