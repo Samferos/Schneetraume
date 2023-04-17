@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqyexoek8enmk"]
+[gd_scene load_steps=5 format=3 uid="uid://dqyexoek8enmk"]
 
 [ext_resource type="PackedScene" uid="uid://jwql8x34wovv" path="res://res/scenes/gui/dialogUi/spritePosition.tscn" id="1_4lpgf"]
 [ext_resource type="Texture2D" uid="uid://xihfrgads6xj" path="res://assets/graphics/2D/ui/nameTag.png" id="1_gg5cv"]
+[ext_resource type="Script" path="res://res/scripts/UI/DialogUI.gd" id="1_l11pl"]
 [ext_resource type="Texture2D" uid="uid://6dm6bqa2p5bu" path="res://assets/graphics/2D/ui/TextBox.png" id="1_rbbfw"]
 
 [node name="UI" type="Control"]
@@ -14,52 +15,61 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Position1" parent="." instance=ExtResource("1_4lpgf")]
+[node name="DialogUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l11pl")
+
+[node name="Position1" parent="DialogUI" instance=ExtResource("1_4lpgf")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.125
 anchor_right = 0.125
 
-[node name="DialogBox" type="MarginContainer" parent="."]
+[node name="DialogBox" type="MarginContainer" parent="DialogUI"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -260.0
+offset_top = -272.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DialogBox"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogUI/DialogBox"]
 layout_mode = 2
 
-[node name="NameTag" type="MarginContainer" parent="DialogBox/VBoxContainer"]
+[node name="NameTag" type="MarginContainer" parent="DialogUI/DialogBox/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 theme_override_constants/margin_left = 140
 
-[node name="Background" type="NinePatchRect" parent="DialogBox/VBoxContainer/NameTag"]
+[node name="Background" type="NinePatchRect" parent="DialogUI/DialogBox/VBoxContainer/NameTag"]
 layout_mode = 2
 texture = ExtResource("1_gg5cv")
 patch_margin_left = 72
 patch_margin_top = 30
 patch_margin_bottom = 2
 
-[node name="Margin" type="MarginContainer" parent="DialogBox/VBoxContainer/NameTag"]
+[node name="Margin" type="MarginContainer" parent="DialogUI/DialogBox/VBoxContainer/NameTag"]
 layout_mode = 2
 theme_override_constants/margin_left = 65
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 10
 
-[node name="Speaker" type="Label" parent="DialogBox/VBoxContainer/NameTag/Margin"]
+[node name="Speaker" type="Label" parent="DialogUI/DialogBox/VBoxContainer/NameTag/Margin"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Lucie"
 
-[node name="TextBox" type="NinePatchRect" parent="DialogBox/VBoxContainer"]
+[node name="TextBox" type="NinePatchRect" parent="DialogUI/DialogBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 3
@@ -69,7 +79,7 @@ patch_margin_top = 25
 patch_margin_right = 193
 patch_margin_bottom = 24
 
-[node name="Margin" type="MarginContainer" parent="DialogBox/VBoxContainer/TextBox"]
+[node name="Margin" type="MarginContainer" parent="DialogUI/DialogBox/VBoxContainer/TextBox"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,7 +91,7 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 85
 theme_override_constants/margin_bottom = 40
 
-[node name="Text" type="RichTextLabel" parent="DialogBox/VBoxContainer/TextBox/Margin"]
+[node name="Text" type="RichTextLabel" parent="DialogUI/DialogBox/VBoxContainer/TextBox/Margin"]
 layout_mode = 2
 bbcode_enabled = true
 text = "brain fart lol"
