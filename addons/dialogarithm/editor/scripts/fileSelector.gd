@@ -1,6 +1,5 @@
 @tool
 extends Control
-class_name SpriteSelector
 signal data_changed(texture, highlight, id)
 
 var positionId : int
@@ -27,12 +26,13 @@ func ClearTexture():
 func Update(sprite = $MarginContainer/HBoxContainer/Texture.texture, highlight = $MarginContainer/HBoxContainer/LeftPanel/Highlight.button_pressed):
 	if sprite is String:
 		sprite = load(sprite)
-	texture = sprite
 	if not sprite == null:
+		texture = sprite.resource_path
 		$MarginContainer/HBoxContainer/Texture.texture = sprite
 		$MarginContainer/HBoxContainer/LeftPanel/Highlight.disabled = false
 		$MarginContainer/HBoxContainer/LeftPanel/Highlight.button_pressed = highlight
 	else:
+		texture = null
 		$MarginContainer/HBoxContainer/Texture.texture = null
 		$MarginContainer/HBoxContainer/LeftPanel/Highlight.disabled = true
 		$MarginContainer/HBoxContainer/LeftPanel/Highlight.button_pressed = false

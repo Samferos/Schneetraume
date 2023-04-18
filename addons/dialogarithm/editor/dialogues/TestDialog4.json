@@ -1,0 +1,174 @@
+[
+ {
+  "information": {
+   "title": "Dialog Title",
+   "description": "A Example Dialog"
+  },
+  "contents": [
+   {
+	"id": 1,
+	"data": [
+	 {
+	  "position": 1,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 2,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 3,
+	  "texture": "<CompressedTexture2D#-9223356053234587619>",
+	  "highlighted": true
+	 },
+	 {
+	  "position": 4,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 5,
+	  "texture": null,
+	  "highlighted": true
+	 }
+	]
+   },
+   {
+	"id": 0,
+	"data": [
+	 {
+	  "speaker": "Johanna"
+	 },
+	 {
+	  "text": "ok à +"
+	 }
+	]
+   },
+   {
+	"id": 1,
+	"data": [
+	 {
+	  "position": 1,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 2,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 3,
+	  "texture": "<CompressedTexture2D#-9223356053234587619>",
+	  "highlighted": true
+	 },
+	 {
+	  "position": 4,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 5,
+	  "texture": null,
+	  "highlighted": true
+	 }
+	]
+   },
+   {
+	"id": 0,
+	"data": [
+	 {
+	  "speaker": "Johanna"
+	 },
+	 {
+	  "text": "ok à +"
+	 }
+	]
+   },
+   {
+	"id": 1,
+	"data": [
+	 {
+	  "position": 1,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 2,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 3,
+	  "texture": "<CompressedTexture2D#-9223356053234587619>",
+	  "highlighted": true
+	 },
+	 {
+	  "position": 4,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 5,
+	  "texture": null,
+	  "highlighted": true
+	 }
+	]
+   },
+   {
+	"id": 0,
+	"data": [
+	 {
+	  "speaker": "Johanna"
+	 },
+	 {
+	  "text": "ok à +"
+	 }
+	]
+   },
+   {
+	"id": 1,
+	"data": [
+	 {
+	  "position": 1,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 2,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 3,
+	  "texture": "<CompressedTexture2D#-9223356053234587619>",
+	  "highlighted": true
+	 },
+	 {
+	  "position": 4,
+	  "texture": null,
+	  "highlighted": false
+	 },
+	 {
+	  "position": 5,
+	  "texture": null,
+	  "highlighted": true
+	 }
+	]
+   },
+   {
+	"id": 0,
+	"data": [
+	 {
+	  "speaker": "Johanna"
+	 },
+	 {
+	  "text": "ok à +"
+	 }
+	]
+   }
+  ]
+ }
+]

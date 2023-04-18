@@ -1,5 +1,5 @@
 @tool
-extends InstructionBlock
+extends "res://addons/dialogarithm/editor/scripts/instructionBlock.gd"
 
 @onready var speaker = $PanelContainer/MarginContainer/Contents/MarginContainer/PanelContainer/Speaker
 @onready var dialog_text = $PanelContainer/MarginContainer/Contents/MarginContainer2/PanelContainer/DialogText
@@ -16,3 +16,4 @@ func _ready():
 func dataUpdate():
 	data[0] = {"speaker" : speaker.text}
 	data[1] = {"text" : dialog_text.text}
+	print(data)

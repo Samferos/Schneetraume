@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1qhf3vhur71w"]
+
+[ext_resource type="PackedScene" uid="uid://cyaok05rkwtlw" path="res://addons/dialogarithm/editor/blocks/base_block.tscn" id="1_cgdbv"]
+[ext_resource type="Script" path="res://addons/dialogarithm/editor/scripts/changeSpriteBlock.gd" id="2_wf06u"]
+[ext_resource type="Script" path="res://addons/dialogarithm/editor/expandButton.gd" id="4_awm3o"]
+
+[node name="ChangeSpriteBlock" instance=ExtResource("1_cgdbv")]
+script = ExtResource("2_wf06u")
+Npositions = 5
+instructionTitle = "Change Sprite"
+instructionId = 1
+
+[node name="Title" parent="PanelContainer/MarginContainer/Contents/Header" index="0"]
+text = "Change Sprite"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Contents" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Contents/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="OptionButton" type="Button" parent="PanelContainer/MarginContainer/Contents/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+toggle_mode = true
+text = "Expand"
+alignment = 0
+script = ExtResource("4_awm3o")
+toggled_node = NodePath("../VBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Contents/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Panel" type="PanelContainer" parent="PanelContainer/MarginContainer/Contents/MarginContainer/VBoxContainer/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slots" type="VBoxContainer" parent="PanelContainer/MarginContainer/Contents/MarginContainer/VBoxContainer/VBoxContainer/Panel" index="0"]
+unique_name_in_owner = true
+layout_mode = 2

@@ -1,10 +1,8 @@
 @tool
-extends Control
+extends "res://addons/dialogarithm/editor/scripts/editorMain.gd"
 
 var title = "Dialog Title"
 var description = "A Example Dialog"
-const Block0 = preload("res://addons/dialogarithm/editor/display_text_block.tscn")
-const Block1 = preload("res://addons/dialogarithm/editor/change_sprite_block.tscn")
 
 func _enter_tree():
 	$PanelContainer/HBoxContainer/File.get_popup().connect("id_pressed", Callable(self, "FileSubMenu"))
@@ -40,7 +38,7 @@ func Load(newData):
 	newData = JSON.parse_string(file.get_as_text())
 	for i in newData[0]["contents"]:
 		var newBlock
-		newBlock = get("Block" + str(i["id"])).instantiate()
+		newBlock = Blocks[i["id"]].instantiate()
 		newBlock.data = i["data"]
 		%DialogueBlocksList.add_child(newBlock)
 	file.close()

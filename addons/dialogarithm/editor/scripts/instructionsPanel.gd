@@ -1,15 +1,6 @@
 @tool
-extends Control
+extends "res://addons/dialogarithm/editor/scripts/editorMain.gd"
 
 func addBlock(id):
-	var wantedBlock
-	match(id):
-		0:
-			wantedBlock = preload("res://addons/dialogarithm/editor/display_text_block.tscn").instantiate()
-		1:
-			wantedBlock = preload("res://addons/dialogarithm/editor/change_sprite_block.tscn").instantiate()
-		2:
-			wantedBlock = preload("res://addons/dialogarithm/editor/highlight_sprite.tscn").instantiate()
-		3:
-			wantedBlock = preload("res://addons/dialogarithm/editor/change_sprite_block.tscn").instantiate()
+	var wantedBlock = Blocks[id].instantiate()
 	%DialogueBlocksList.add_child(wantedBlock)

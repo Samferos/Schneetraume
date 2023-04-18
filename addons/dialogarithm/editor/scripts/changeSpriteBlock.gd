@@ -1,10 +1,10 @@
 @tool
-extends InstructionBlock
+extends "res://addons/dialogarithm/editor/scripts/instructionBlock.gd"
 
 @export var Npositions := 5
 
 func duplicateBlock():
-	var newNode = preload("res://addons/dialogarithm/editor/change_sprite_block.tscn").instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
+	var newNode = preload("res://addons/dialogarithm/editor/blocks/change_sprite_block.tscn").instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 	newNode.set("data", data)
 	get_parent().add_child(newNode)
 

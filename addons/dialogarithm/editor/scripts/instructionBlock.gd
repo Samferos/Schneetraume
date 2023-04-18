@@ -1,6 +1,5 @@
 @tool
 extends Control
-class_name InstructionBlock
 @export var instructionTitle = "Block Instruction"
 @export var instructionId = 0
 var data : Array

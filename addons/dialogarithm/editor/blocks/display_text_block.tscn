@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhlyld3d3iqa3"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cyaok05rkwtlw" path="res://addons/dialogarithm/editor/base_block.tscn" id="1_881n1"]
+[ext_resource type="PackedScene" uid="uid://cyaok05rkwtlw" path="res://addons/dialogarithm/editor/blocks/base_block.tscn" id="1_881n1"]
 [ext_resource type="Script" path="res://addons/dialogarithm/editor/scripts/display_text_block.gd" id="2_m7bh1"]
 
 [node name="DisplayTextBlock" instance=ExtResource("1_881n1")]
