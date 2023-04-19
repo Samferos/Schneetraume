@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://djb6dusj3xg5j"]
+
+[ext_resource type="Script" path="res://addons/dialogarithm/editor/charaDB/scripts/DatabaseEditor.gd" id="1_a2vnr"]
+
+[node name="Panel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2vnr")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Database1" type="Control" parent="TabContainer"]
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="TabContainer/Database1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Separator" type="VBoxContainer" parent="TabContainer/Database1/Margins"]
+layout_mode = 2
+
+[node name="MainPanel" type="PanelContainer" parent="TabContainer/Database1/Margins/Separator"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Splitter" type="HSplitContainer" parent="TabContainer/Database1/Margins/Separator/MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_constants/minimum_grab_thickness = 10
+
+[node name="ItemListPanel" type="PanelContainer" parent="TabContainer/Database1/Margins/Separator/MainPanel/Splitter"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Margin" type="MarginContainer" parent="TabContainer/Database1/Margins/Separator/MainPanel/Splitter/ItemListPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="List" type="VBoxContainer" parent="TabContainer/Database1/Margins/Separator/MainPanel/Splitter/ItemListPanel/Margin"]
+layout_mode = 2
+
+[node name="ItemPanel" type="PanelContainer" parent="TabContainer/Database1/Margins/Separator/MainPanel/Splitter"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Margin" type="MarginContainer" parent="TabContainer/Database1/Margins/Separator/MainPanel/Splitter/ItemPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Scroll" type="ScrollContainer" parent="TabContainer/Database1/Margins/Separator/MainPanel/Splitter/ItemPanel/Margin"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="TabContainer/Database1/Margins/Separator/MainPanel/Splitter/ItemPanel/Margin/Scroll"]
+layout_mode = 2
+
+[node name="BottomPanel" type="PanelContainer" parent="TabContainer/Database1/Margins/Separator"]
+layout_mode = 2
+
+[node name="FlowContainer" type="HFlowContainer" parent="TabContainer/Database1/Margins/Separator/BottomPanel"]
+layout_mode = 2
+alignment = 2
+
+[node name="Save" type="Button" parent="TabContainer/Database1/Margins/Separator/BottomPanel/FlowContainer"]
+layout_mode = 2
+text = "Save Changes"
+
+[node name="Cancel" type="Button" parent="TabContainer/Database1/Margins/Separator/BottomPanel/FlowContainer"]
+layout_mode = 2
+text = "Cancel Changes"

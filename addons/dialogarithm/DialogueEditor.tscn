@@ -129,6 +129,11 @@ popup/item_3/id = 3
 layout_mode = 2
 text = "Edit"
 switch_on_hover = true
+item_count = 2
+popup/item_0/text = "Characters Database"
+popup/item_0/id = 4
+popup/item_1/text = "Themes Database"
+popup/item_1/id = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="Content/DialogEditor"]
 layout_mode = 2
@@ -162,3 +167,4 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="Content/InstructionsPanel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ChangeSprite" to="Content/InstructionsPanel" method="addBlock" binds= [1]]
 [connection signal="pressed" from="Content/InstructionsPanel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/CloseDialog" to="Content/InstructionsPanel" method="addBlock" binds= [3]]
 [connection signal="about_to_popup" from="Content/DialogEditor/PanelContainer/HBoxContainer/File" to="Content/DialogEditor" method="FileSubMenu"]
+[connection signal="about_to_popup" from="Content/DialogEditor/PanelContainer/HBoxContainer/Edit" to="Content/DialogEditor" method="FileSubMenu"]
